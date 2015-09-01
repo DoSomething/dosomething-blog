@@ -5,15 +5,10 @@ build:
     - script:
         name: install bundler
         code: sudo gem install bundler
-    - script:
-        name: install grunt
-        code: sudo npm install grunt -g
-    - script:
-        name: install grunt
-        code: sudo npm install grunt-cli -g
+    - npm-install
     - script:
         name: Build theme
-        code: cd wp-content/themes/dosomething-blog && ./scripts/build-staging.sh
+        code: npm run build
 deploy:
   steps:
     - bundle-install
