@@ -5,7 +5,14 @@ build:
     - script:
         name: install bundler
         code: sudo gem install bundler
-    - npm-install
+    - script:
+        name: npm install
+        code: |-
+          sudo npm install -g npm
+          npm -v
+          mkdir -p $WERCKER_CACHE_DIR/wercker/npm
+          npm config set cache $WERCKER_CACHE_DIR/wercker/npm
+          sudo npm install
     - script:
         name: Build theme
         code: npm run build
