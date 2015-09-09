@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<header class="header header--blog header--blog-home with-gradient" style="background-image: url(<?php header_image(); ?>)">
+<header class="header -hero" style="background-image: url(<?php header_image(); ?>)">
 	<div class="wrapper">
 		<h1 class="header__title"><?php single_cat_title() ?></h1>
 		<?php

@@ -49,37 +49,9 @@ $asset-path: "";
 
 // Custom header for the blog.
 // Overrides Forge's Header pattern.
-.header.header--blog {
-  padding: 216px 0;
-
-  &.header--blog-home {
-    .header__title {
-      text-transform: uppercase;
-    }
-  }
-
-  &.with-gradient {
-    &:before {
-      position: absolute;
-      content: "";
-      width: 100%;
-      height: 100%;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 5;
-      background: linear-gradient(rgba(#000, 0) 10%, rgba(#000, 0.2) 65%, rgba(#000, 0.5) 87%, rgba(#000, 0.85) 100%);
-
-      .modernizr-no-cssgradients & {
-        background: transparent forge-asset-url("images/fallbacks/black-gradient.png") 0 bottom repeat-x;
-      }
-    }
-  }
-
-  > .wrapper {
-    position: absolute;
-    bottom: 24px;
+.header.header--blog-home {
+  .header__title {
+    text-transform: uppercase;
   }
 }
 

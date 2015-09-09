@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-<header class="header header--blog header--blog-home with-gradient" style="background-image: url(<?php header_image(); ?>)">
+<header class="header -hero header--blog-home" style="background-image: url(<?php header_image(); ?>)">
 	<div class="wrapper">
 		<h1 class="header__title"><?php bloginfo('title'); ?></h1>
 		<p class="header__subtitle"><?php bloginfo('description'); ?></p>

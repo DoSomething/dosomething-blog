@@ -11,7 +11,7 @@ get_header(); ?>
 <?php if ( have_posts() ) : the_post(); ?>
 
 
-<header class="header header--blog <?php if(has_post_thumbnail()): echo 'with-gradient'; endif; ?>" <?php if(has_post_thumbnail()) : echo 'style="background-image: url(' . dosomething_featured_image_url() . ');"'; endif; ?>>
+<header class="header <?php if(has_post_thumbnail()): echo '-hero'; endif; ?>" <?php if(has_post_thumbnail()) : echo 'style="background-image: url(' . dosomething_featured_image_url() . ');"'; endif; ?>>
 	<div class="wrapper">
 		<h1 class="header__title"><?php the_title() ?></h1>
 		<p class="header__subtitle">by <?php the_author(); ?></p>
