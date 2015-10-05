@@ -6,6 +6,10 @@ build:
         name: install bundler
         code: sudo gem install bundler
     - script:
+        name: Update Composer
+        code: sudo composer self-update
+    - leipert/composer-install@0.0.1
+    - script:
         name: npm install
         code: |-
           sudo npm install -g npm
