@@ -21,6 +21,8 @@ namespace :deploy do
   task :link_folders do
     run "ln -nfs #{shared_path}/.env #{release_path}/.env"
     run "ln -nfs #{shared_path}/uploads #{release_path}/web/app/uploads"
+    run "mkdir #{release_path}/web/wp-content"
+    run "ln -nfs #{shared_path}/uploads #{release_path}/web/wp-content/uploads"
   end
 
 end
