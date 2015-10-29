@@ -19,8 +19,8 @@ ssh_options[:keys] = [ENV["CAP_PRIVATE_KEY"]]
 namespace :deploy do
 
   task :link_folders do
-    run "ln -nfs #{shared_path}/wp-config.php #{release_path}/wp-config.php"
-    run "ln -nfs #{shared_path}/uploads #{release_path}/wp-content/"
+    run "ln -nfs #{shared_path}/.env #{release_path}/.env"
+    run "ln -nfs #{shared_path}/uploads #{release_path}/app/uploads"
   end
 
 end

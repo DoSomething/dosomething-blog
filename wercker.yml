@@ -6,14 +6,20 @@ build:
         name: install bundler
         code: sudo gem install bundler
     - script:
-        name: install grunt
-        code: sudo npm install grunt -g
+        name: Update Composer
+        code: sudo composer self-update
+    - leipert/composer-install@0.0.1
     - script:
-        name: install grunt
-        code: sudo npm install grunt-cli -g
+        name: npm install
+        code: |-
+          sudo npm install -g npm@2.14.4
+          npm -v
+          mkdir -p $WERCKER_CACHE_DIR/wercker/npm
+          npm config set cache $WERCKER_CACHE_DIR/wercker/npm
+          sudo npm install
     - script:
         name: Build theme
-        code: cd wp-content/themes/dosomething-blog && ./scripts/build-staging.sh
+        code: npm run build
 deploy:
   steps:
     - bundle-install
