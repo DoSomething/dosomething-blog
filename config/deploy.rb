@@ -20,7 +20,7 @@ namespace :deploy do
 
   task :link_folders do
     run "ln -nfs #{shared_path}/.env #{release_path}/.env"
-    run "ln -nfs #{shared_path}/uploads #{release_path}/app/uploads"
+    run "ln -nfs #{shared_path}/uploads #{release_path}/web/app/uploads"
   end
 
 end
