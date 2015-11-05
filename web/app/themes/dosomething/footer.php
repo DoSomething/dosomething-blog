@@ -17,7 +17,10 @@
       <h4>Catch up with our latest posts&hellip;</h4>
       <ul class="post-link-list">
         <?php
-        $recent_posts = wp_get_recent_posts();
+        $recent_posts = wp_get_recent_posts([
+          'numberposts' => 5,
+          'post_status' => 'publish'
+        ]);
         foreach( $recent_posts as $recent ){
           echo '<li><a href="' . get_the_permalink($recent['ID']) . '"><span>' . $recent['post_title'] . '</span>';
           if($recent['post_author']) {
