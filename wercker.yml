@@ -1,7 +1,14 @@
 box: blisteringherb/scholarship@0.0.6
-# Build definition
+
+# Build
+# -----
 build:
   steps:
+    - script:
+        name: update node
+        code: |-
+          curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+          sudo apt-get install -y nodejs
     - script:
         name: install bundler
         code: sudo gem install bundler
@@ -20,6 +27,9 @@ build:
     - script:
         name: Build theme
         code: npm run build
+ 
+# Deploy
+# ------
 deploy:
   steps:
     - bundle-install

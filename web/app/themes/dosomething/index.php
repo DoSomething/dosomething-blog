@@ -43,7 +43,7 @@ get_header(); ?>
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<div class="container__block -narrow">
+				<div class="container__block">
           <?php
 
             /*

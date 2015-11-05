@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "babel-runtime": "^5.8.20",
-    "fender": "0.0.8",
+    "fender": "0.0.9",
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13"
   }

@@ -11,6 +11,55 @@ $asset-path: "";
 // Built using Forge 6.0.
 //
 
+.figure.-drop-left {
+    text-align: left;
+
+    @include media($medium) {
+      > .figure__media {
+        float: left;
+        padding-right: gutter();
+        margin: 0;
+      }
+
+      > .figure__body {
+        overflow: hidden;
+        padding-left: gutter();
+      }
+    }
+}
+
+.figure.-drop-right {
+    text-align: left;
+
+    @include media($medium) {
+      > .figure__media {
+        float: right;
+        padding-left: gutter();
+        margin: 0;
+      }
+
+      > .figure__body {
+        overflow: hidden;
+        padding-right: gutter();
+      }
+    }
+}
+
+.figure.-large {
+  > .figure__media {
+    width: 100%;
+
+    @include media($medium) {
+      width: 300px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+  }
+}
+
 // Navigation logo
 .navigation {
   .navigation__logo {
@@ -60,21 +109,6 @@ $asset-path: "";
 
   a {
     color: #4e2b63;
-
-    &:after {
-      content: ' →';
-      font-family: 'Helvetica Neue', 'Arial', sans-serif;
-      color: #ddd;
-      text-decoration: none;
-    }
-
-    &:hover {
-      text-decoration: none;
-    }
-
-    &:hover span {
-      text-decoration: underline;
-    }
   }
 }
 
