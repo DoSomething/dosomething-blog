@@ -125,6 +125,18 @@ function dosomething_scripts() {
 add_action( 'wp_enqueue_scripts', 'dosomething_scripts' );
 
 /**
+ * Only show "Our Blog" posts on homepage.
+ * @see https://github.com/DoSomething/dosomething-blog/issues/87
+ */
+function set_our_blog_homepage_category( $query ) {
+    if ( $query->is_home() && $query->is_main_query() ) {
+        $query->set( 'cat', '4' );
+    }
+}
+add_action( 'pre_get_posts', 'set_our_blog_homepage_category' );
+
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
