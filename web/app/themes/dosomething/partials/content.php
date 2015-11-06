@@ -29,11 +29,15 @@
             </header>
 
             <?php
-            the_content( sprintf(
-            /* translators: %s: Name of current post. */
-              wp_kses( __( 'Continue reading&hellip;' ), array( 'p' => array( 'class' => array('footnote') ) ) ),
-              the_title( '<span class="screen-reader-text">"', '"</span>', false )
-            ) );
+              if(empty($post->post_excerpt)) {
+                the_content( sprintf(
+                  wp_kses( __( 'Continue reading&hellip;' ), array( 'p' => array( 'class' => array('footnote') ) ) ),
+                  the_title( '<span class="screen-reader-text">"', '"</span>', false )
+                ) );
+              } else {
+                echo '<p>' . $post->post_excerpt . '</p>';
+                echo '<p class="footnote"><a href="' . esc_url(get_permalink()) . '">Continue reading&hellip;</a></p>';
+              }
             ?>
 
           </div>
