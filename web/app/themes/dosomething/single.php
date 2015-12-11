@@ -31,7 +31,7 @@ get_header(); ?>
 			</div>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<div class="post">
+				<div class="post with-lists">
 					<?php the_content(); ?>
 				</div>
 
